@@ -35,7 +35,7 @@ st.title('Insurance Price Priction')
 st.subheader('by Chandanbir and Deesha')
 
 input_data = []
-input_data.append(st.number_input('Enter your age'))
+input_data.append(st.number_input('Enter your age',step=1))
 sex_text=st.selectbox('Enter your sex',['Select from drop down','Male','Female'],index=0)
 if (sex_text=='Male'):
     sex=1
@@ -51,7 +51,7 @@ if (smoker=='Yes'):
 else:
     smoker_val=0
 input_data.append(smoker_val)
-input_data.append(st.number_input('Enter the number of children you have'))
+input_data.append(st.number_input('Enter the number of children you have',step=1))
 
 if (sex_text == 'm' or sex_text == 'male' or sex_text == 'Male'):
     sex=0
