@@ -36,19 +36,21 @@ st.subheader('by Chandanbir and Deesha')
 
 input_data = []
 input_data.append(st.number_input('Enter your age'))
-sex_text=st.text_input('Enter your sex')
-if (sex_text == 'm' or sex_text == 'male' or sex_text == 'Male'):
-    sex=0
-else:
+sex_text=st.selectbox('Enter your sex',['Select from drop down','Male','Female'],index=0)
+if (sex_text=='Male'):
     sex=1
+else:
+    sex=0
 input_data.append(sex)
+
 input_data.append(st.number_input('Enter your bmi'))
-smoker=st.number_input('Do you smoke')
-if (sex_text == 'y' or sex_text == 'Y' or sex_text == 'yes' or sex_text=='Yes'):
-    sex=1
+smoker=st.selectbox('Do you smoke',['Select from drop down','Yes','No'],index=0,)
+
+if (smoker=='Yes'):
+    smoker_val=1
 else:
-    sex=0
-input_data.append(sex)
+    smoker_val=0
+input_data.append(smoker_val)
 input_data.append(st.number_input('Enter the number of children you have'))
 
 if (sex_text == 'm' or sex_text == 'male' or sex_text == 'Male'):
@@ -66,8 +68,8 @@ input_data_as_numpy_array = np.asarray(input_data)
 
 # reshape the array
 input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
-
+prediction=[]
 prediction = regressor.predict(input_data_reshaped)
-print(prediction)
-
-st.write('The insurance cost is USD ', prediction[0])
+# print(prediction)
+if st.button('Predict'):
+    st.write('The insurance cost is USD ', prediction[0])
