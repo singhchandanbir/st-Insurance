@@ -6,4 +6,5 @@ scipy==1.11.1
 seaborn==0.12.2
 six==1.16.0
 sklearn==0.0.post7
+scikit-learn
 
