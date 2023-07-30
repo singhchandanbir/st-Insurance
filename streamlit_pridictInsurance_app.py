@@ -34,12 +34,22 @@ regressor.fit(X_train, Y_train)
 st.title('Insurance Price Priction')
 st.subheader('by Chandanbir and Deesha')
 
-
-age=st.number_input('Enter your age')
-sex_text=st.text_input('Enter your sex ')
-bmi=st.number_input('Enter your bmi')
+input_data = []
+input_data.append(st.number_input('Enter your age'))
+sex_text=st.text_input('Enter your sex')
+if (sex_text == 'm' or sex_text == 'male' or sex_text == 'Male'):
+    sex=0
+else:
+    sex=1
+input_data.append(sex)
+input_data.append(st.number_input('Enter your bmi'))
 smoker=st.number_input('Do you smoke')
-children=st.number_input('Enter the number of children you have')
+if (sex_text == 'y' or sex_text == 'Y' or sex_text == 'yes' or sex_text=='Yes'):
+    sex=1
+else:
+    sex=0
+input_data.append(sex)
+input_data.append(st.number_input('Enter the number of children you have'))
 
 if (sex_text == 'm' or sex_text == 'male' or sex_text == 'Male'):
     sex=0
@@ -47,9 +57,9 @@ else:
     sex=1
     
 
-input_data = ()
 
-input_data.append(age,sex,bmi,children,smoker)
+
+
 
 # changing input_data to a numpy array
 input_data_as_numpy_array = np.asarray(input_data)
