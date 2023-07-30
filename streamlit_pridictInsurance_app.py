@@ -35,10 +35,10 @@ st.title('Insurance Price Priction')
 st.subheader('by Chandanbir and Deesha')
 
 
-age=st.number_input('Enter your age', 'Age')
-sex_text=st.text_input('Enter your sex ','(M or F)')
-bmi=st.number_input('Enter your bmi', 'bmi')
-smoker=st.number_input('Do you smoke', 'y or n')
+age=st.number_input('Enter your age')
+sex_text=st.text_input('Enter your sex ')
+bmi=st.number_input('Enter your bmi')
+smoker=st.number_input('Do you smoke')
 children=st.number_input('Enter the number of children you have')
 
 if (sex_text == 'm' or sex_text == 'male' or sex_text == 'Male'):
