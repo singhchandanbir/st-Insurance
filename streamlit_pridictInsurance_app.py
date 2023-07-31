@@ -29,7 +29,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_
 regressor = LinearRegression()
 regressor.fit(X_train, Y_train)
 
-st.title('Insurance Price Priction')
+st.title('Insurance Price Prediction')
 st.subheader('by Chandanbir and Deesha')
 
 input_data = []
